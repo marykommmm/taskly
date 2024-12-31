@@ -9,7 +9,7 @@ const UserContext = React.createContext();
 axios.defaults.withCredentials = true;
 
 export const UserContextProvider = ({ children }) => {
-  const serverUrl = "tasklytaskmanager.netlify.app";
+  const serverUrl = "http://localhost:8000";
 
   const router = useRouter();
 
