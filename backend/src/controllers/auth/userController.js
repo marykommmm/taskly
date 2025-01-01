@@ -14,7 +14,7 @@ export const registerUser = asyncHandler(async (req, res) => {
   //validation
   if (!name || !email || !password) {
     // 400 Bad Request
-    res.status(400).json({ message: "All fields are required" });
+    return res.status(400).json({ message: "All fields are required" });
   }
 
   // check password length
@@ -193,15 +193,14 @@ export const userLoginStatus = asyncHandler(async (req, res) => {
 
   if (!token) {
     // 401 Unauthorized
-    res.status(401).json({ message: "Not authorized, please login!" });
+    return res.status(401).json({ message: "Not authorized, please login!" });
   }
   // verify the token
-  const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
-  if (decoded) {
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     res.status(200).json(true);
-  } else {
-    res.status(401).json(false);
+  } catch (error) {
+    return res.status(401).json(false);
   }
 });
 
