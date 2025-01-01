@@ -19,7 +19,7 @@ function RegisterForm() {
           Create an account. Already have an account?{" "}
           <a
             href="/login"
-            className="font-bold text-[#3498db] hover:text-[##2980b9] transition-all duration-300"
+            className="font-bold text-[#3498db] hover:text-[#2980b9] transition-all duration-300"
           >
             Login here
           </a>
@@ -82,7 +82,7 @@ function RegisterForm() {
             type="submit"
             disabled={!name || !email || !password}
             onClick={registerUser}
-            className="mt-[1.5rem] flex-1 px-4 py-3 font-bold bg-[#3498db] text-white rounded-md hover:bg-[##2980b9] transition-colors"
+            className="mt-[1.5rem] flex-1 px-4 py-3 font-bold bg-[#3498db] text-white rounded-md hover:bg-[#2980b9] transition-colors"
           >
             Register Now
           </button>
