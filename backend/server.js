@@ -15,7 +15,7 @@ const app = express();
 // middleware
 app.use(
   cors({
-    origin: process.env.CLIENT_URL,
+    origin: "https://taskly-snowy.vercel.app/",
     credentials: true,
   })
 );
